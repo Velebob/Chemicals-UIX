@@ -1,4 +1,4 @@
-const API_URL = "http://chemicals-core-api-ageyc7esd7atezdd.centralus-01.azurewebsites.net";
+const API_URL = "https://chemicals-core-api-ageyc7esd7atezdd.centralus-01.azurewebsites.net";
 
 async function apiRequest(path, method="GET", body=null) {
     const token = localStorage.getItem("token");
