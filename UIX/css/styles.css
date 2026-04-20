@@ -1,0 +1,95 @@
+body {
+    margin:0;
+    font-family: Arial;
+    background:#E9EAEC;
+}
+
+.ribbon {
+    background:#232E45;
+    color:white;
+    padding:12px;
+    display:flex;
+    justify-content:space-between;
+}
+
+.center-card {
+    width:300px;
+    margin:100px auto;
+    background:white;
+    padding:20px;
+    text-align:center;
+}
+
+.scanner-bar {
+    display:flex;
+    padding:10px;
+}
+
+.scanner-bar input {
+    flex:1;
+    padding:12px;
+}
+
+.content {
+    display:flex;
+    height:70vh;
+}
+
+.inventory {
+    flex:1;
+    background:white;
+    padding:10px;
+    overflow:auto;
+}
+
+.cart {
+    width:300px;
+    background:white;
+    padding:10px;
+}
+
+.item {
+    padding:10px;
+    margin:5px 0;
+    border-radius:6px;
+}
+
+.green { background:#baf8ba; }
+.orange { background:#ffcc99; }
+.red { background:#f8baba; }
+.purple { background:#d6b3ff; }
+
+.actions {
+    display:flex;
+    justify-content:space-around;
+    padding:10px;
+}
+
+button {
+    padding:10px;
+}
+
+.modal, .camera-modal {
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.7);
+    justify-content:center;
+    align-items:center;
+}
+
+.modal-box, .camera-box {
+    background:white;
+    padding:20px;
+    border-radius:10px;
+}
+
+.toast {
+    position:fixed;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    background:black;
+    color:white;
+    padding:10px;
+}
