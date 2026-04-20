@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="css/styles.css">
+<title>Login</title>
 </head>
+
 <body>
 
 <div class="center-card">
@@ -21,13 +23,16 @@
 <script>
 async function doLogin() {
     try {
-        await login(
-            document.getElementById("user").value,
-            document.getElementById("pass").value
-        );
-    } catch {
+        const u = document.getElementById("user").value;
+        const p = document.getElementById("pass").value;
+
+        await login(u, p);
+
+    } catch (e) {
+        console.error(e);
         alert("Login inválido");
     }
+}
 </script>
 
 </body>
