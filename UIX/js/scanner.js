@@ -16,7 +16,10 @@ function initScanner(){
 
 async function handleScan(code){
     try{
-        const lote=await apiRequest("/lote/"+code);
+        code = limpiarCodigo(code);
+
+        const lote = await apiRequest("/lote/"+code);
+
         addToCart(lote.lot);
         toast("OK");
     }catch{
