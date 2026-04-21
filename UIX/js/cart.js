@@ -51,6 +51,7 @@ function renderCart(){
     });
 }
 
+
 function inc(i){
     cart[i].cantidad++;
     renderCart();
