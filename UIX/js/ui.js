@@ -1,3 +1,12 @@
+function mapColor(c){
+    return {
+        "VERDE":"green",
+        "NARANJA":"orange",
+        "ROJO":"red",
+        "MORADO":"purple"
+    }[c] || "green";
+}
+
 function renderCart(){
     const div = document.getElementById("cart");
     div.innerHTML = "";
