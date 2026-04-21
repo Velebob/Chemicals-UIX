@@ -93,3 +93,19 @@ button {
     color:white;
     padding:10px;
 }
+
+.inv-table {
+    width:100%;
+    border-collapse: collapse;
+}
+
+.inv-table th, .inv-table td {
+    padding:8px;
+    border-bottom:1px solid #ddd;
+    text-align:left;
+}
+
+.inv-table tr:hover {
+    opacity:0.85;
+    cursor:pointer;
+}
