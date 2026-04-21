@@ -14,6 +14,17 @@ function initScanner(){
     });
 }
 
+function limpiarCodigo(code){
+    code = code.trim();
+
+    // quitar prefijo "lt"
+    if(code.toLowerCase().startsWith("lt")){
+        code = code.substring(2);
+    }
+
+    return code;
+}
+
 async function handleScan(code){
     try{
         code = limpiarCodigo(code);
