@@ -3,12 +3,12 @@ let cart=[];
 function addToCart(lot){
     const f = cart.find(x => x.lot_number === lot.lot_number);
 
-    if(f) {
+    if(f){
         f.cantidad++;
     } else {
         cart.push({
             lot_number: lot.lot_number,
-            descripcion: lot.description,
+            descripcion: lot.descripcion,
             cantidad: 1
         });
     }
@@ -19,4 +19,34 @@ function addToCart(lot){
 function clearCart(){
     cart=[];
     renderCart();
+}
+
+function renderCart(){
+    const div = document.getElementById("cart");
+    div.innerHTML = "";
+
+    cart.forEach((i,idx)=>{
+        const d = document.createElement("div");
+
+        d.innerHTML = `
+            <div style="margin-bottom:10px;">
+                <b>${i.lot_number}</b><br>
+                ${i.descripcion}<br>
+
+                <button onclick="dec(${idx})">-</button>
+
+                <input 
+                    type="number" 
+                    value="${i.cantidad}" 
+                    min="1"
+                    style="width:60px"
+                    onchange="setQty(${idx}, this.value)"
+                >
+
+                <button onclick="inc(${idx})">+</button>
+            </div>
+        `;
+
+        div.appendChild(d);
+    });
 }
