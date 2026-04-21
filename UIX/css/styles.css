@@ -109,3 +109,10 @@ button {
     opacity:0.85;
     cursor:pointer;
 }
+
+.center-card input {
+    display:block;
+    width:100%;
+    margin:10px 0;
+    padding:10px;
+}
