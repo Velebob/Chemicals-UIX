@@ -50,3 +50,23 @@ function renderCart(){
         div.appendChild(d);
     });
 }
+
+function inc(i){
+    cart[i].cantidad++;
+    renderCart();
+}
+
+function dec(i){
+    if(cart[i].cantidad > 1){
+        cart[i].cantidad--;
+    }
+    renderCart();
+}
+
+function setQty(i,val){
+    const n = parseFloat(val);
+    if(n > 0){
+        cart[i].cantidad = n;
+    }
+    renderCart();
+}
