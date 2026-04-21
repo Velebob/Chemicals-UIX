@@ -1,6 +1,29 @@
 let cart=[];
 
 function addToCart(lot){
+
+    let mensajes = [];
+
+    if(lot.flags?.es_caducado){
+        mensajes.push("⛔ Lote caducado");
+    }
+
+    if(lot.flags?.por_caducar){
+        mensajes.push("⚠️ Próximo a caducar");
+    }
+
+    if(lot.flags?.programa_mismatch){
+        mensajes.push("🔀 Programa no coincide");
+    }
+
+    if(lot.flags?.no_en_erp){
+        mensajes.push("❓ No existe en ERP");
+    }
+
+    if(mensajes.length){
+        alert(mensajes.join("\n"));
+    }
+
     const f = cart.find(x => x.lot_number === lot.lot_number);
 
     if(f){
@@ -13,11 +36,6 @@ function addToCart(lot){
         });
     }
 
-    renderCart();
-}
-
-function clearCart(){
-    cart=[];
     renderCart();
 }
 
