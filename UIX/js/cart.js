@@ -1,6 +1,14 @@
 let cart=[];
 
-function addToCart(lot){
+function normalizeLot(l){
+    return {
+        lot_number: l.lot_number,
+        descripcion: l.descripcion || l.description || "",
+        cantidad: l.cantidad || 1
+    };
+}
+
+addToCart(normalizeLot(lot)){
 
     let mensajes = [];
 
