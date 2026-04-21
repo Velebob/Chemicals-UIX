@@ -17,6 +17,7 @@ function renderInventory(lotes){
                     <th>Lote</th>
                     <th>Descripción</th>
                     <th>Cant</th>
+                    <th>Caducidad</th>
                     <th>Días</th>
                     <th>Flags</th>
                 </tr>
@@ -37,6 +38,7 @@ function renderInventory(lotes){
             <td>${l.lot_number}</td>
             <td>${l.descripcion}</td>
             <td>${l.cantidad}</td>
+            <td>${l.fecha_caducidad ? l.fecha_caducidad.split("T")[0] : ""}</td>
             <td>${l.dias_para_caducar ?? ""}</td>
             <td>
                 ${l.flags.es_caducado ? "⛔ Caduco" : ""}
