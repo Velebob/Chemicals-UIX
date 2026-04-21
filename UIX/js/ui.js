@@ -39,10 +39,10 @@ function renderInventory(lotes){
             <td>${l.cantidad}</td>
             <td>${l.dias_para_caducar ?? ""}</td>
             <td>
-                ${l.flags.es_caducado ? "⛔" : ""}
-                ${l.flags.por_caducar ? "⚠️" : ""}
-                ${l.flags.programa_mismatch ? "🔀" : ""}
-                ${l.flags.no_en_erp ? "❓" : ""}
+                ${l.flags.es_caducado ? "⛔ Caduco" : ""}
+                ${l.flags.por_caducar ? "⚠️ Pronta Caducidad" : ""}
+                ${l.flags.programa_mismatch ? "🔀 Diferente Programa" : ""}
+                ${l.flags.no_en_erp ? "❓ No en Baan" : ""}
             </td>
         `;
 
