@@ -17,12 +17,10 @@ function initScanner(){
 function limpiarCodigo(code){
     code = code.trim();
 
-    // quitar prefijo "lt"
-    if(code.toLowerCase().startsWith("lt")){
-        code = code.substring(2);
-    }
+    // extrae solo lote tipo M##########
+    const match = code.match(/M\d+/);
 
-    return code;
+    return match ? match[0] : code;
 }
 
 async function handleScan(code){
