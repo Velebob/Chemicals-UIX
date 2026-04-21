@@ -29,21 +29,22 @@ function renderCart(){
         const d = document.createElement("div");
 
         d.innerHTML = `
-            <div style="margin-bottom:10px;">
+            <div class="cart-item">
                 <b>${i.lot_number}</b><br>
-                ${i.descripcion}<br>
-
-                <button onclick="dec(${idx})">-</button>
-
-                <input 
-                    type="number" 
-                    value="${i.cantidad}" 
-                    min="1"
-                    style="width:60px"
-                    onchange="setQty(${idx}, this.value)"
-                >
-
-                <button onclick="inc(${idx})">+</button>
+                ${i.descripcion}
+        
+                <div class="cart-controls">
+                    <button onclick="dec(${idx})">-</button>
+        
+                    <input 
+                        type="number" 
+                        value="${i.cantidad}" 
+                        min="1"
+                        onchange="setQty(${idx}, this.value)"
+                    >
+        
+                    <button onclick="inc(${idx})">+</button>
+                </div>
             </div>
         `;
 
