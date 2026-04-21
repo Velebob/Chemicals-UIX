@@ -7,17 +7,6 @@ function mapColor(c){
     }[c] || "green";
 }
 
-function renderCart(){
-    const div = document.getElementById("cart");
-    div.innerHTML = "";
-
-    cart.forEach(i=>{
-        const d = document.createElement("div");
-        d.innerText = `${i.lot_number} - ${i.descripcion} (${i.cantidad})`;
-        div.appendChild(d);
-    });
-}
-
 function renderInventory(lotes){
     const div = document.getElementById("inventory");
 
