@@ -39,6 +39,11 @@ function addToCart(lot){
     renderCart();
 }
 
+window.clearCart = function(){
+    cart = [];
+    renderCart();
+};
+
 function renderCart(){
     const div = document.getElementById("cart");
     div.innerHTML = "";
