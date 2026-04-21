@@ -121,3 +121,9 @@ button {
     margin-top:10px;
     width:100%;
 }
+
+document.getElementById("pass").addEventListener("keydown", e=>{
+    if(e.key === "Enter"){
+        doLogin();
+    }
+});
