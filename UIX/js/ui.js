@@ -1,10 +1,10 @@
 function renderCart(){
-    const div=document.getElementById("cart");
-    div.innerHTML="";
+    const div = document.getElementById("cart");
+    div.innerHTML = "";
 
     cart.forEach(i=>{
-        const d=document.createElement("div");
-        d.innerText=i.lot_number+" ("+i.cantidad+")";
+        const d = document.createElement("div");
+        d.innerText = `${i.lot_number} - ${i.descripcion} (${i.cantidad})`;
         div.appendChild(d);
     });
 }
