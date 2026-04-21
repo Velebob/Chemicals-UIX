@@ -1,30 +1,39 @@
-let cart=[];
+let cart = [];
 
+/* =========================
+NORMALIZADOR
+========================= */
 function normalizeLot(l){
     return {
         lot_number: l.lot_number,
         descripcion: l.descripcion || l.description || "",
-        cantidad: l.cantidad || 1
+        cantidad: l.cantidad || 1,
+        flags: l.flags || {}
     };
 }
 
-addToCart(normalizeLot(lot)){
+/* =========================
+ADD TO CART
+========================= */
+function addToCart(lot){
+
+    const l = normalizeLot(lot);
 
     let mensajes = [];
 
-    if(lot.flags?.es_caducado){
+    if(l.flags?.es_caducado){
         mensajes.push("⛔ Lote caducado");
     }
 
-    if(lot.flags?.por_caducar){
+    if(l.flags?.por_caducar){
         mensajes.push("⚠️ Próximo a caducar");
     }
 
-    if(lot.flags?.programa_mismatch){
+    if(l.flags?.programa_mismatch){
         mensajes.push("🔀 Programa no coincide");
     }
 
-    if(lot.flags?.no_en_erp){
+    if(l.flags?.no_en_erp){
         mensajes.push("❓ No existe en ERP");
     }
 
@@ -32,14 +41,14 @@ addToCart(normalizeLot(lot)){
         alert(mensajes.join("\n"));
     }
 
-    const f = cart.find(x => x.lot_number === lot.lot_number);
+    const f = cart.find(x => x.lot_number === l.lot_number);
 
     if(f){
         f.cantidad++;
     } else {
         cart.push({
-            lot_number: lot.lot_number,
-            descripcion: lot.descripcion,
+            lot_number: l.lot_number,
+            descripcion: l.descripcion,
             cantidad: 1
         });
     }
@@ -47,11 +56,17 @@ addToCart(normalizeLot(lot)){
     renderCart();
 }
 
+/* =========================
+CLEAR CART
+========================= */
 window.clearCart = function(){
     cart = [];
     renderCart();
 };
 
+/* =========================
+RENDER
+========================= */
 function renderCart(){
     const div = document.getElementById("cart");
     div.innerHTML = "";
@@ -83,7 +98,9 @@ function renderCart(){
     });
 }
 
-
+/* =========================
+CONTROLES
+========================= */
 function inc(i){
     cart[i].cantidad++;
     renderCart();
